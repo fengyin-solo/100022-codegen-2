@@ -28,6 +28,12 @@ class EntryPayload(BaseModel):
     remark: str | None = None
 
 
+class RecalculatePayload(BaseModel):
+    """批量重算请求：entry_ids 为空时重算全部未审核场次，否则只重算指定场次。"""
+
+    entry_ids: list[int] | None = None
+
+
 
 class ScriptEntry(BaseModel):
     """剧本明细结构。"""
